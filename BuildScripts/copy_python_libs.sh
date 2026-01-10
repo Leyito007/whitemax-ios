@@ -108,6 +108,20 @@ process_python_binary_module() {
     local framework_dir="${FRAMEWORKS_DIR}/${dotted}.framework"
     local framework_bin="${framework_dir}/${dotted}"
     local framework_plist="${framework_dir}/Info.plist"
+    local framework_privacy_manifest="${framework_dir}/PrivacyInfo.xcprivacy"
+
+    # App Store validation requires MinimumOSVersion in every embedded framework Info.plist.
+    # Prefer the app deployment target provided by Xcode; fall back to Python's minimum (matches Python.xcframework).
+    local min_os_version="${IPHONEOS_DEPLOYMENT_TARGET}"
+    if [ -z "${min_os_version}" ]; then
+        min_os_version="13.0"
+    fi
+
+    # Use correct supported platform for the current build.
+    local supported_platform="iPhoneOS"
+    if [ "${PLATFORM_NAME}" = "iphonesimulator" ]; then
+        supported_platform="iPhoneSimulator"
+    fi
 
     # The .fwork marker must replace the original .so on sys.path.
     local fwork_path="${so_path%.so}.fwork"
@@ -143,8 +157,33 @@ process_python_binary_module() {
   <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
   <key>CFBundleName</key><string>${dotted}</string>
   <key>CFBundlePackageType</key><string>FMWK</string>
+  <key>CFBundleSupportedPlatforms</key>
+  <array>
+    <string>${supported_platform}</string>
+  </array>
+  <key>MinimumOSVersion</key><string>${min_os_version}</string>
   <key>CFBundleShortVersionString</key><string>1.0</string>
   <key>CFBundleVersion</key><string>1</string>
+</dict>
+</plist>
+EOF
+
+    # Apple (ITMS-91061) requires a privacy manifest for certain commonly-used SDK signatures (e.g. BoringSSL)
+    # that may be detected inside these Python extension modules (notably _ssl, _hashlib).
+    # We provide a conservative manifest declaring no tracking, no collected data, and no "required reason" APIs.
+    cat > "${framework_privacy_manifest}" <<'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>NSPrivacyTracking</key>
+  <false/>
+  <key>NSPrivacyTrackingDomains</key>
+  <array/>
+  <key>NSPrivacyCollectedDataTypes</key>
+  <array/>
+  <key>NSPrivacyAccessedAPITypes</key>
+  <array/>
 </dict>
 </plist>
 EOF
@@ -199,12 +238,21 @@ process_all_python_binaries() {
     echo "Verifying no standalone .so remain outside Frameworks..."
     remaining_so=$(find "${BUNDLE_ROOT}" -type f -name "*.so" ! -path "${FRAMEWORKS_DIR}/*" 2>/dev/null | head -50)
     if [ -n "${remaining_so}" ]; then
-        echo "❌ ERROR: Found standalone .so files outside Frameworks (App Store will reject):"
-        echo "${remaining_so}"
-        echo "Please ensure all third-party binaries are iOS-compatible and processed into frameworks."
-        exit 1
+        # In DEBUG builds, standalone .so files are allowed (development only)
+        # If CONFIGURATION is not set, treat as RELEASE for safety
+        if [ "${CONFIGURATION}" = "Debug" ]; then
+            echo "⚠️  WARNING: Found standalone .so files outside Frameworks (allowed in DEBUG builds):"
+            echo "${remaining_so}"
+            echo "Note: These will cause App Store rejection in RELEASE builds."
+        else
+            echo "❌ ERROR: Found standalone .so files outside Frameworks (App Store will reject):"
+            echo "${remaining_so}"
+            echo "Please ensure all third-party binaries are iOS-compatible and processed into frameworks."
+            exit 1
+        fi
+    else
+        echo "✓ No standalone .so files remain outside Frameworks"
     fi
-    echo "✓ No standalone .so files remain outside Frameworks"
 }
 # Создаем директорию app в bundle если её нет
 mkdir -p "${APP_DIR}"

@@ -306,6 +306,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/Python.framework/Headers\"",
 				);
 				INFOPLIST_KEY_CFBundleDisplayName = WhiteMax;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -353,6 +354,7 @@
 					"\"$(BUILT_PRODUCTS_DIR)/Python.framework/Headers\"",
 				);
 				INFOPLIST_KEY_CFBundleDisplayName = WhiteMax;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
